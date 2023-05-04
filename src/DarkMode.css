@@ -1,0 +1,17 @@
+.dark {
+    background-color: #292929;
+    color: #fff;
+}
+
+.dark h1 {
+    color: #dda0dd;
+}
+
+.light {
+    background-color: #fff;
+    color: #292929;
+}
+
+.toggle {
+    border-radius: 6px;
+}

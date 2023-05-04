@@ -1,8 +1,10 @@
 import "./App.css";
 import WeatherSearch from "./WeatherSearch";
+import DarkMode from "./DarkMode";
 function App() {
   return (
     <div className="App">
+      <DarkMode />
       <h1>Weather App ⛅</h1>
       <WeatherSearch />
       <footer>
