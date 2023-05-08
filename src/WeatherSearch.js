@@ -95,7 +95,10 @@ export default function WeatherSearch() {
         </div>
         <h2 className="city">{city}</h2>
         <ul>
-          <li>🌡️{Math.round(weatherData.temperature)}°C</li>
+          <li>
+            🌡️{weatherData.temperature}
+            <span> °C | °F</span>
+          </li>
           <li>{weatherData.description}</li>
           <li>💦:{weatherData.humidity}%</li>
           <li>🍃:{weatherData.wind} km/h</li>
