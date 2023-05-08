@@ -4,7 +4,7 @@
 }
 
 .dark h1 {
-    color: #dda0dd;
+    color: white;
 }
 
 .light {
@@ -14,4 +14,12 @@
 
 .toggle {
     border-radius: 6px;
+}
+
+.dark .city {
+    color: white;
+}
+
+.dark .date {
+    color: white;
 }

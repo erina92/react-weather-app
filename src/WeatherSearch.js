@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import axios from "axios";
 import ReactLoading from "react-loading";
 import ReactAnimatedWeather from "react-animated-weather";
+import FormattedDate from "./FormattedDate";
+import "./App.css";
 
 export default function WeatherSearch() {
   let [city, setCity] = useState("");
@@ -59,6 +61,7 @@ export default function WeatherSearch() {
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
       icon: response.data.weather[0].icon,
+      date: new Date(response.data.dt * 1000),
     });
   }
 
@@ -87,7 +90,10 @@ export default function WeatherSearch() {
     return (
       <div>
         {form}
-        <h2>{city}</h2>
+        <div className="date">
+          <FormattedDate date={weatherData.date} />
+        </div>
+        <h2 className="city">{city}</h2>
         <ul>
           <li>🌡️{Math.round(weatherData.temperature)}°C</li>
           <li>{weatherData.description}</li>
@@ -112,8 +118,8 @@ export default function WeatherSearch() {
           <ReactLoading
             type="spin"
             color="purple"
-            height={80}
-            width={80}
+            height={200}
+            width={200}
             className="loader"
           />
         </p>

@@ -1,11 +1,12 @@
 .App {
   font-family: sans-serif;
   text-align: center;
-  margin: 125px 0 0 0;
+  margin: 40px 0 0 0;
+
 }
 
 h1 {
-  color: purple;
+  color: black;
 }
 
 li {
@@ -63,10 +64,21 @@ button:hover {
   margin: 50px auto;
 }
 
+
 p {
   margin: 20px 20px auto;
+  text-align: center;
+}
+
+.date {
+  margin-top: 20px;
+  color: black;
+}
+
+.city {
+  color: black;
 }
 
 footer a:visited {
-  color: plum;
+  color: #dda0dd;
 }
