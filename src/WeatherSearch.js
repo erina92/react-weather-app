@@ -63,6 +63,7 @@ export default function WeatherSearch() {
       wind: Math.round(response.data.wind.speed),
       icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
+      city: response.data.name,
     });
   }
 
@@ -84,10 +85,11 @@ export default function WeatherSearch() {
             type="search"
             placeholder="Enter a city here"
             onChange={updateCity}
+            className="form-control"
           />
         </div>
         <div className="col-3">
-          <button>Search</button>
+          <button className="btn btn-primary w-100">👆</button>
         </div>
       </div>
     </form>
@@ -95,28 +97,30 @@ export default function WeatherSearch() {
 
   if (loaded) {
     return (
-      <div>
+      <div className="Weather">
         {form}
-        <div className="date">
-          <FormattedDate date={weatherData.date} />
+        <div className="WeatherInfo">
+          <div className="date">
+            <FormattedDate date={weatherData.date} />
+          </div>
+          <h2 className="city">{city}</h2>
+          <ul>
+            <li>
+              <ShowTemperature celsius={weatherData.temperature} />
+            </li>
+            <li>{weatherData.description}</li>
+            <li>💦:{weatherData.humidity}%</li>
+            <li>🍃:{weatherData.wind} km/h</li>
+            <li>
+              <ReactAnimatedWeather
+                icon={CustomIcon(weatherData.icon)}
+                color="purple"
+                size={80}
+                animate={true}
+              />
+            </li>
+          </ul>
         </div>
-        <h2 className="city">{city}</h2>
-        <ul>
-          <li>
-            <ShowTemperature celsius={weatherData.temperature} />
-          </li>
-          <li>{weatherData.description}</li>
-          <li>💦:{weatherData.humidity}%</li>
-          <li>🍃:{weatherData.wind} km/h</li>
-          <li>
-            <ReactAnimatedWeather
-              icon={CustomIcon(weatherData.icon)}
-              color="purple"
-              size={80}
-              animate={true}
-            />
-          </li>
-        </ul>
       </div>
     );
   } else {
@@ -127,8 +131,8 @@ export default function WeatherSearch() {
           <ReactLoading
             type="spin"
             color="purple"
-            height={200}
-            width={200}
+            height={100}
+            width={100}
             className="loader"
           />
         </p>

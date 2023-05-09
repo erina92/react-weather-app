@@ -12,8 +12,9 @@
     color: #292929;
 }
 
-.toggle {
-    border-radius: 6px;
+.dTheme {
+    position: relative;
+    left: 43%;
 }
 
 .dark .city {

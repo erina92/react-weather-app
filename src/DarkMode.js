@@ -14,8 +14,8 @@ export default function DarkMode() {
   }, [theme]);
   return (
     <div className={`DarkMode${theme}`}>
-      <button onClick={toggleTheme} className="toggle">
-        Dark Mode 🌙
+      <button onClick={toggleTheme} className="btn btn-primary dTheme">
+        🌙
       </button>
     </div>
   );

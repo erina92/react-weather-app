@@ -23,6 +23,8 @@
 
 h1 {
   color: black;
+  text-align: start;
+  font-size: 32px;
 }
 
 li {
