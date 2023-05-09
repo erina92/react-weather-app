@@ -82,3 +82,7 @@ p {
 footer a:visited {
   color: #dda0dd;
 }
+
+.unit a:visited {
+  color: plum;
+}

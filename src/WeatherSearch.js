@@ -3,6 +3,7 @@ import axios from "axios";
 import ReactLoading from "react-loading";
 import ReactAnimatedWeather from "react-animated-weather";
 import FormattedDate from "./FormattedDate";
+import ShowTemperature from "./ShowTemperature";
 import "./App.css";
 
 export default function WeatherSearch() {
@@ -96,8 +97,7 @@ export default function WeatherSearch() {
         <h2 className="city">{city}</h2>
         <ul>
           <li>
-            🌡️{weatherData.temperature}
-            <span> °C | °F</span>
+            <ShowTemperature celsius={weatherData.temperature} />
           </li>
           <li>{weatherData.description}</li>
           <li>💦:{weatherData.humidity}%</li>
